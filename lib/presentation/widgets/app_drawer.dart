@@ -98,7 +98,7 @@ class _AppDrawerState extends State<AppDrawer> {
           title: menuList[i].name,
           isMobile: true,
           isSelected: menuList[i].isSelected,
-          titleStyle: textTheme.bodyText1?.copyWith(
+          titleStyle: textTheme.bodyLarge?.copyWith(
             color:
                 menuList[i].isSelected ? AppColors.primary200 : AppColors.white,
             fontSize: Sizes.TEXT_SIZE_16,
@@ -135,7 +135,7 @@ class _AppDrawerState extends State<AppDrawer> {
 
   Widget _buildFooterText() {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? footerTextStyle = textTheme.caption?.copyWith(
+    TextStyle? footerTextStyle = textTheme.bodySmall?.copyWith(
       color: AppColors.primaryText2,
       fontWeight: FontWeight.bold,
     );

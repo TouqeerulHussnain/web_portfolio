@@ -39,7 +39,7 @@ class _FooterSectionState extends State<FooterSection> {
   @override
   Widget build(BuildContext context) {
     TextTheme textTheme = Theme.of(context).textTheme;
-    TextStyle? footerTextStyle = textTheme.caption?.copyWith(
+    TextStyle? footerTextStyle = textTheme.bodySmall?.copyWith(
       color: AppColors.primaryText2,
       fontWeight: FontWeight.bold,
     );
@@ -124,7 +124,7 @@ class _FooterSectionState extends State<FooterSection> {
             children: [
               Expanded(
                 child: Center(
-                  child:InkWell(
+                  child: InkWell(
                     onTap: () => openUrlLink(StringConst.DAVID_LEGEND_URL),
                     child: RichText(
                       text: TextSpan(
@@ -263,8 +263,8 @@ class _FooterSectionState extends State<FooterSection> {
                   Text(
                     StringConst.LETS_TALK,
                     textAlign: TextAlign.center,
-                    style:
-                        textTheme.headline4?.copyWith(color: AppColors.white),
+                    style: textTheme.headlineMedium
+                        ?.copyWith(color: AppColors.white),
                   ),
                   SpaceH60(),
                   ..._buildFooterItems(footerItems),
@@ -327,7 +327,8 @@ class _FooterSectionState extends State<FooterSection> {
                 Spacer(flex: 2),
                 Text(
                   StringConst.LETS_TALK,
-                  style: textTheme.headline3?.copyWith(color: AppColors.white),
+                  style:
+                      textTheme.displaySmall?.copyWith(color: AppColors.white),
                 ),
                 Spacer(),
                 Row(
@@ -378,14 +379,14 @@ class FooterItem extends StatelessWidget {
         SpaceH8(),
         Text(
           title,
-          style: textTheme.subtitle1?.copyWith(
+          style: textTheme.titleMedium?.copyWith(
             color: AppColors.white,
           ),
         ),
         SpaceH8(),
         Text(
           subtitle,
-          style: textTheme.bodyText1?.copyWith(
+          style: textTheme.bodyLarge?.copyWith(
             color: AppColors.grey250,
           ),
         ),

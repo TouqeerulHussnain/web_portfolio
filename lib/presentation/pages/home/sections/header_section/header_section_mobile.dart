@@ -54,9 +54,9 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
     double screenWidth = widthOfScreen(context) - (sidePadding * 2);
     double contentAreaWidth = screenWidth;
     TextStyle? bodyTextStyle =
-        textTheme.bodyText1?.copyWith(fontSize: bodyTextSizeSm);
+        textTheme.bodyLarge?.copyWith(fontSize: bodyTextSizeSm);
     TextStyle? socialTitleStyle =
-        textTheme.subtitle1?.copyWith(fontSize: socialTextSizeSm);
+        textTheme.titleMedium?.copyWith(fontSize: socialTextSizeSm);
 
     double buttonWidth = 80;
     double buttonHeight = 48;
@@ -120,7 +120,7 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                     margin: EdgeInsets.only(top: heightOfStack * 0.1),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
-                      style: textTheme.headline1?.copyWith(
+                      style: textTheme.displayLarge?.copyWith(
                         color: AppColors.grey50,
                         fontSize: headerIntroTextSize * 2.5,
                       ),
@@ -145,7 +145,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
                                     speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                     ),
                                   ),
@@ -163,7 +164,8 @@ class _HeaderSectionMobileState extends State<HeaderSectionMobile>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
                                       height: 1.2,

@@ -14,7 +14,6 @@ const double kRunSpacing = 20.0;
 const double kMainAxisSpacing = 16.0;
 const double kCrossAxisSpacing = 16.0;
 
-
 class SkillsSection extends StatefulWidget {
   SkillsSection({Key? key});
   @override
@@ -166,7 +165,6 @@ class _SkillsSectionState extends State<SkillsSection>
           skillLevelWidth: width,
           controller: _controller,
           skill: skillLevels[index].skill,
-          
           level: skillLevels[index].level,
         ),
       );

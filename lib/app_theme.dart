@@ -14,11 +14,11 @@ class AppTheme {
     return ThemeData(
       colorScheme: colorScheme,
       textTheme: _textTheme,
-      iconTheme: IconThemeData(color: AppColors.white),
-      canvasColor: colorScheme.background,
-      scaffoldBackgroundColor: colorScheme.background,
+      iconTheme: const IconThemeData(color: AppColors.white),
+      canvasColor: colorScheme.surface,
+      scaffoldBackgroundColor: colorScheme.surface,
       highlightColor: Colors.transparent,
-      accentColor: colorScheme.primary,
+      hintColor: colorScheme.primary,
       visualDensity: VisualDensity.adaptivePlatformDensity,
       focusColor: AppColors.primaryColor,
     );
@@ -26,12 +26,8 @@ class AppTheme {
 
   static const ColorScheme lightColorScheme = ColorScheme(
     primary: AppColors.primaryColor,
-    primaryVariant: AppColors.secondaryColor,
     secondary: AppColors.primaryColor,
-    secondaryVariant: AppColors.primaryColor,
-    background: Colors.white,
     surface: Color(0xFFFAFBFB),
-    onBackground: AppColors.primaryColor,
     error: _lightFillColor,
     onError: _lightFillColor,
     onPrimary: _lightFillColor,
@@ -46,75 +42,74 @@ class AppTheme {
   // static const _medium = FontWeight.w500;
   static const _regular = FontWeight.w400;
   static const _light = FontWeight.w300;
-
   static final TextTheme _textTheme = TextTheme(
-    headline1: GoogleFonts.gloriaHallelujah(
+    displayLarge: GoogleFonts.gloriaHallelujah(
       fontSize: Sizes.TEXT_SIZE_96,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline2: GoogleFonts.ibmPlexMono(
+    displayMedium: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_60,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline3: GoogleFonts.ibmPlexMono(
+    displaySmall: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_48,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline4: GoogleFonts.ibmPlexMono(
+    headlineMedium: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_34,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline5: GoogleFonts.ibmPlexMono(
+    headlineSmall: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_24,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    headline6: GoogleFonts.ibmPlexMono(
+    titleLarge: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_20,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle1: GoogleFonts.ibmPlexMono(
+    titleMedium: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_18,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    subtitle2: GoogleFonts.ibmPlexMono(
+    titleSmall: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.black,
       fontWeight: _bold,
       fontStyle: FontStyle.normal,
     ),
-    bodyText1: GoogleFonts.lato(
+    bodyLarge: GoogleFonts.lato(
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.primaryText2,
       fontWeight: _regular,
       fontStyle: FontStyle.normal,
     ),
-    bodyText2: GoogleFonts.ibmPlexMono(
+    bodyMedium: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_14,
       color: AppColors.black,
       fontWeight: _light,
       fontStyle: FontStyle.normal,
     ),
-    button: GoogleFonts.lato(
+    labelLarge: GoogleFonts.lato(
       fontSize: Sizes.TEXT_SIZE_16,
       color: AppColors.black,
       fontStyle: FontStyle.normal,
       fontWeight: _regular,
     ),
-    caption: GoogleFonts.ibmPlexMono(
+    bodySmall: GoogleFonts.ibmPlexMono(
       fontSize: Sizes.TEXT_SIZE_12,
       color: AppColors.primaryText1,
       fontWeight: _regular,

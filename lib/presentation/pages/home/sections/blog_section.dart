@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart' as cs;
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
@@ -14,7 +15,7 @@ const double kSpacing = 28.0;
 const double kRunSpacing = 16.0;
 
 class BlogSection extends StatefulWidget {
-  BlogSection({Key? key});
+  const BlogSection();
   @override
   _BlogSectionState createState() => _BlogSectionState();
 }
@@ -22,7 +23,8 @@ class BlogSection extends StatefulWidget {
 class _BlogSectionState extends State<BlogSection> {
   final int blogLength = Data.blogData.length;
   double currentPageIndex = 1;
-  CarouselController _carouselController = CarouselController();
+  cs.CarouselSliderController _carouselController =
+      cs.CarouselSliderController();
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +48,7 @@ class _BlogSectionState extends State<BlogSection> {
           right: 0,
           child: SelectableText(
             StringConst.BLOGGING,
-            style: textTheme.headline1?.copyWith(
+            style: textTheme.displayLarge?.copyWith(
               color: AppColors.grey50,
               fontSize: headerIntroTextSize * 2,
             ),
@@ -57,7 +59,7 @@ class _BlogSectionState extends State<BlogSection> {
           children: [
             ResponsiveBuilder(builder: (context, sizingInformation) {
               double screenWidth = sizingInformation.screenSize.width;
-              if (screenWidth <= (RefinedBreakpoints().tabletSmall)) {
+              if (screenWidth <= (const RefinedBreakpoints().tabletSmall)) {
                 return ContentArea(
                   padding: padding,
                   child: Column(
@@ -98,7 +100,7 @@ class _BlogSectionState extends State<BlogSection> {
                           body: StringConst.BLOG_DESC,
                         ),
                       ),
-                      Spacer(),
+                      const Spacer(),
                       NimbusButton(
                         buttonTitle: StringConst.BLOG_VIEW_ALL,
                         buttonColor: AppColors.primaryColor,
@@ -115,11 +117,12 @@ class _BlogSectionState extends State<BlogSection> {
               child: ResponsiveBuilder(
                 builder: (context, sizingInformation) {
                   double widthOfScreen = sizingInformation.screenSize.width;
-                  if (widthOfScreen < (RefinedBreakpoints().tabletLarge)) {
-                    return Container(
+                  if (widthOfScreen <
+                      (const RefinedBreakpoints().tabletLarge)) {
+                    return SizedBox(
                       width: widthOfScreen,
                       height: screenWidth + 250,
-                      child: CarouselSlider.builder(
+                      child: cs.CarouselSlider.builder(
                         itemCount: blogLength,
                         itemBuilder: (BuildContext context, int index,
                             int pageViewIndex) {
@@ -139,14 +142,14 @@ class _BlogSectionState extends State<BlogSection> {
                       ),
                     );
                   } else if (widthOfScreen >=
-                          RefinedBreakpoints().tabletLarge &&
+                          const RefinedBreakpoints().tabletLarge &&
                       widthOfScreen <= 1024) {
                     return Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
-                        Container(
+                        SizedBox(
                           width: screenWidth,
-                          child: CarouselSlider.builder(
+                          child: cs.CarouselSlider.builder(
                             itemCount: blogLength,
                             carouselController: _carouselController,
                             itemBuilder: (BuildContext context, int index,
@@ -207,7 +210,7 @@ class _BlogSectionState extends State<BlogSection> {
     );
   }
 
-  CarouselOptions carouselOptions({
+  cs.CarouselOptions carouselOptions({
     bool autoPlay = true,
     bool enlargeCenterPage = false,
     bool enableInfiniteScroll = true,
@@ -216,7 +219,7 @@ class _BlogSectionState extends State<BlogSection> {
     int initialPage = 1,
     ScrollPhysics? scrollPhysics = const NeverScrollableScrollPhysics(),
   }) {
-    return CarouselOptions(
+    return cs.CarouselOptions(
         autoPlay: autoPlay,
         enableInfiniteScroll: enableInfiniteScroll,
         enlargeCenterPage: enlargeCenterPage,
@@ -224,7 +227,7 @@ class _BlogSectionState extends State<BlogSection> {
         aspectRatio: aspectRatio,
         initialPage: initialPage,
         scrollPhysics: scrollPhysics,
-        onPageChanged: (int index, CarouselPageChangedReason reason) {
+        onPageChanged: (int index, cs.CarouselPageChangedReason reason) {
           setState(() {
             currentPageIndex = index.toDouble();
           });
@@ -267,19 +270,19 @@ class _BlogSectionState extends State<BlogSection> {
         onTap: (index) {
           _moveToNextCarousel(index.toInt());
         },
-        decorator: DotsDecorator(
+        decorator: const DotsDecorator(
           color: AppColors.yellow10,
           activeColor: AppColors.yellow400,
           size: Size(Sizes.SIZE_6, Sizes.SIZE_6),
           activeSize: Size(Sizes.SIZE_24, Sizes.SIZE_6),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              const Radius.circular(Sizes.RADIUS_8),
+              Radius.circular(Sizes.RADIUS_8),
             ),
           ),
           activeShape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
-              const Radius.circular(Sizes.RADIUS_8),
+              Radius.circular(Sizes.RADIUS_8),
             ),
           ),
           spacing: EdgeInsets.symmetric(horizontal: Sizes.SIZE_4),

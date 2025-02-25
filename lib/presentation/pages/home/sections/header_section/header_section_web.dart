@@ -63,9 +63,9 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
     double screenWidth = widthOfScreen(context);
     double contentAreaWidth = screenWidth;
     TextStyle? bodyTextStyle =
-        textTheme.bodyText1?.copyWith(fontSize: bodyTextSize);
+        textTheme.bodyLarge?.copyWith(fontSize: bodyTextSize);
     TextStyle? socialTitleStyle =
-        textTheme.subtitle1?.copyWith(fontSize: socialTextSize);
+        textTheme.titleMedium?.copyWith(fontSize: socialTextSize);
 
     List<Widget> cardsForTabletView = buildCardRow(
       context: context,
@@ -144,7 +144,7 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                     margin: EdgeInsets.only(top: heightOfStack * 0.05),
                     child: SelectableText(
                       StringConst.FIRST_NAME,
-                      style: textTheme.headline1?.copyWith(
+                      style: textTheme.displayLarge?.copyWith(
                         color: AppColors.grey50,
                         fontSize: headerIntroTextSize * 2,
                       ),
@@ -168,7 +168,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   TypewriterAnimatedText(
                                     StringConst.INTRO,
                                     speed: Duration(milliseconds: 60),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                     ),
                                   ),
@@ -186,7 +187,8 @@ class _HeaderSectionWebState extends State<HeaderSectionWeb>
                                   TypewriterAnimatedText(
                                     StringConst.POSITION,
                                     speed: Duration(milliseconds: 80),
-                                    textStyle: textTheme.headline2?.copyWith(
+                                    textStyle:
+                                        textTheme.displayMedium?.copyWith(
                                       fontSize: headerIntroTextSize,
                                       color: AppColors.primaryColor,
                                       height: 1.2,
